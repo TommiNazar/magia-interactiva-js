@@ -34,7 +34,7 @@ function adivinacion_tablas (){
     cuadro1 = prompt (tabla1)
 
     if (cuadro1 == "si"){
-        resultado1 = 8
+        resultado1 = tabla1[0]
     }else{
         resultado1 = 0
     }
@@ -42,28 +42,28 @@ function adivinacion_tablas (){
     alert("muy bien dime ahora si esta en esta lista")
     cuadro2 = prompt(tabla2)
     if (cuadro2 == "si"){
-        resultado2 = 2
+        resultado2 = tabla2[0]
     }else{
         resultado2 = 0
     }
     alert("muy bien dime ahora si esta en esta lista")
     cuadro3 = prompt(tabla3)
     if (cuadro3 == "si"){
-        resultado3 = 4
+        resultado3 = tabla3[0]
     }else{
         resultado3 = 0
     }
     alert("muy bien dime ahora si esta en esta lista")
     cuadro4 = prompt(tabla4)
     if (cuadro4 == "si"){
-        resultado4 = 1
+        resultado4 = tabla4[0]
     }else{
         resultado4 = 0
     }
     alert("muy bien dime ahora si esta en esta lista")
     cuadro5 = prompt(tabla5)
     if (cuadro5 == "si"){
-        resultado5 = 16
+        resultado5 = tabla5[0]
     }else{
         resultado5 = 0
     }
@@ -72,7 +72,7 @@ function adivinacion_tablas (){
 
     let resultado = resultado1 + resultado2 + resultado3 + resultado4 + resultado5
 
-    alert(resultado)
+    alert("tu numero es " + resultado)
 
 }
 
@@ -150,7 +150,7 @@ function carta_pensada (){
     alert("a continuacion al resultado que obtenga, sume segun el caso .....1) +6 si es de trebol....2) +7 si es de corazon....3) +8 si es de picas....4) +9 si es de diamantes")
     
     let valor = prompt (parseInt("perfecto escribe tu resultado"))
-    
+
     alert (valor)
 
     alert("perfecto tu carta es...")
