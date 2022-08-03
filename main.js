@@ -1,25 +1,22 @@
 
-let juegos = prompt("que juego de magia querias ver...... 1, 2, 3, 4")
+const juego1 = document.getElementById(`juego1`)
 
-switch(juegos){
+juego1.addEventListener(`click`, adivinacion_tablas)
 
-    case "1":
-        adivinacion_numero ();
-    break;
+const juego2 = document.getElementById(`juego2`)
 
-    case "2":
-        cartas_adivinada ();
-        break;
-    
-    case "3":
-        carta_pensada ();
-        break;
+juego2.addEventListener(`click`, adivinacion_numero)
 
-    case "4":
-        adivinacion_tablas();
-        break;
+const juego3 = document.getElementById(`juego3`)
 
-}
+juego3.addEventListener(`click`, cartas_adivinada)
+
+const juego4 = document.getElementById(`juego4`)
+
+juego4.addEventListener(`click`, carta_pensada)
+
+
+
 //------------uso de arrays---------------------
 function adivinacion_tablas (){
 
