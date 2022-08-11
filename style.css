@@ -1,0 +1,31 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+#contenedor_juegos_cartas{
+    
+}
+.texto1{
+    display: block;
+    font-size: 300%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.carta{
+    display: inline;    
+    margin: 10px;
+    height: auto;
+    width: auto;
+}
+.carta img{
+    height: auto;
+    width: 25%;
+    
+}
+.boton1{
+    display: block;
+    height: 3em;
+    width: 5em;
+    font-size: 3em;
+}

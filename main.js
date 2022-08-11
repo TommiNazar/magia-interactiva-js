@@ -1,181 +1,144 @@
 
-const juego1 = document.getElementById(`juego1`)
+/*----------------------juego 1 cartas---------------*/
 
-juego1.addEventListener(`click`, adivinacion_tablas)
-
-const juego2 = document.getElementById(`juego2`)
-
-juego2.addEventListener(`click`, adivinacion_numero)
-
-const juego3 = document.getElementById(`juego3`)
-
-juego3.addEventListener(`click`, cartas_adivinada)
-
-const juego4 = document.getElementById(`juego4`)
-
-juego4.addEventListener(`click`, carta_pensada)
-
-
-
-//------------uso de arrays---------------------
-function adivinacion_tablas (){
-
-    tabla1 = [8,9,10,11,12,13,14,15,24,25,26,27,28,29,30]
-    tabla2 = [2,3,6,7,10,11,14,15,18,19,22,23,26,27,30]
-    tabla3 = [4,5,6,7,12,13,14,15,20,21,22,23,28,29,30]
-    tabla4 = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29]
-    tabla5 = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-
-    alert ("para el siguiente juego de magia piensa un numero entre 1 y 30")
-    alert ( "perfecto ahora te mostrare una lista de numeros si tu numero esta entre ellos escribe si, en caso contrario escribe no")
-    cuadro1 = prompt (tabla1)
-
-    if (cuadro1 == "si"){
-        resultado1 = tabla1[0]
-    }else{
-        resultado1 = 0
+class carta {
+    constructor (titulo,imagen) {
+        this.titulo = titulo;
+        this.imagen = imagen;
     }
-
-    alert("muy bien dime ahora si esta en esta lista")
-    cuadro2 = prompt(tabla2)
-    if (cuadro2 == "si"){
-        resultado2 = tabla2[0]
-    }else{
-        resultado2 = 0
-    }
-    alert("muy bien dime ahora si esta en esta lista")
-    cuadro3 = prompt(tabla3)
-    if (cuadro3 == "si"){
-        resultado3 = tabla3[0]
-    }else{
-        resultado3 = 0
-    }
-    alert("muy bien dime ahora si esta en esta lista")
-    cuadro4 = prompt(tabla4)
-    if (cuadro4 == "si"){
-        resultado4 = tabla4[0]
-    }else{
-        resultado4 = 0
-    }
-    alert("muy bien dime ahora si esta en esta lista")
-    cuadro5 = prompt(tabla5)
-    if (cuadro5 == "si"){
-        resultado5 = tabla5[0]
-    }else{
-        resultado5 = 0
-    }
-
-    alert("perfecto ya se cual es tu numero pensado")
-
-    let resultado = resultado1 + resultado2 + resultado3 + resultado4 + resultado5
-
-    alert("tu numero es " + resultado)
-
+    
 }
 
-//----------------uso de condicionales-------------
-function adivinacion_numero (){
-    alert("te mostrare un numero de magia")
-    let numero = prompt("dime un numero entre 1 y 9")
-    
-    if(numero >9 || numero == 0) {
-        alert("debe ser un numero menor a 9 que no sea el cero")
+const carta1 = new carta ("8D","./img/8d.png")
+const carta2 = new carta ("9C","./img/9c.png")
+const carta3 = new carta ("9T","./img/9t.png")
+const carta4 = new carta ("10D","./img/10d.png")
+const carta5 = new carta ("10P","./img/10p.png")
+console.log(carta3)
+
+const cartas1 = [carta1,carta4,carta3,carta2,carta5]
+
+// cartas1.push(carta1);
+// cartas1.push(carta2);
+// cartas1.push(carta3);
+// cartas1.push(carta4);
+// cartas1.push(carta5);
+
+console.log(cartas1)
+
+
+
+const carta6 = new carta ("8T","./img/8t.png")
+const carta7 = new carta ("9D","./img/9d.png")
+const carta8 = new carta ("10C","./img/10c.png")
+const carta9 = new carta ("10T","./img/10t.png")
+
+const cartas2 = []
+
+cartas2.push(carta8);
+cartas2.push(carta7);
+cartas2.push(carta6);
+cartas2.push(carta9);
+
+console.log(cartas2)
+
+function mostrarcartas1 (cartas){
+
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+    contenedorJuegos.innerHTML=`
+    <h2>listo para jugar</h2>`
+
+    const texto1 = document.createElement("div");
+    texto1.innerHTML = "<h2>recuerda una carta</h2>";
+    texto1.classList.add("texto1");
+    contenedorJuegos.appendChild(texto1);
+
+    for (const carta of cartas){
+        const divCartas = document.createElement("div");
+        divCartas.classList.add("carta");
+
+        divCartas.innerHTML = `
+        <img src= " ${carta.imagen}" alt="${carta.titulo}">`;
+
+        contenedorJuegos.appendChild(divCartas);
     }
-    
-    if (numero <= 9){
-        alert("multiplica ese numero por 9")
-        alert("perfecto ahora te pedire que sumes los digitos de ese numero")
-        alert("ahora sumale 7")
-        alert("dividelo en dos")
-        alert("tu numero es.....")
-        alert("8")
-    }
-}
-//--------------------uso de objetos-------------
-function cartas_adivinada (){
-    function carta (valor, palo){
-        this.valor = valor
-        this.palo = palo
-    }
 
-    alert("de las cartas en la mesa enfocate en una sola")
-//--------la idea es q tengan las imagenes de las cartas de poker-----------
-    const carta1 = new carta (9,"D")
-    const carta2 = new carta (9,"T")
-    const carta3 = new carta (8,"C")
-    const carta4 = new carta (8,"P")
-    const carta5 = new carta (10,"D")
-    const carta6 = new carta (10,"P")
+    const boton_siguiente = document.createElement("button");
+    boton_siguiente.innerText = "siguiente";
+    boton_siguiente.classList.add("boton1")
     
-    alert (carta4.valor + carta4.palo +" "+ carta5.valor + carta5.palo+" "+ carta1.valor + carta1.palo+" "+ carta3.valor + carta3.palo+" "+ carta2.valor + carta2.palo+" "+ carta6.valor + carta6.palo)
 
-    alert("perfecto lo que hare va a ser sacar solo tu carta elegida")
-    const carta7 = new carta (9,"C")
-    const carta8 = new carta (9,"P")
-    const carta9 = new carta (8,"D")
-    const carta10 = new carta (8,"T")
-    const carta11 = new carta (10,"P")
+    boton_siguiente.addEventListener("click", limpiar);
+    contenedorJuegos.appendChild(boton_siguiente);
 
-    alert("tu carta a desaparecido fijate que es la unica q no esta")
-    alert (carta9.valor + carta9.palo +" "+ carta11.valor + carta11.palo+" "+ carta7.valor + carta7.palo+" "+ carta10.valor + carta10.palo+" "+ carta8.valor + carta8.palo)
-}
+    
 
-//------------------uso de ciclo for--------------
-function carta_pensada (){
-    
-    alert("cuantas cartas quieres que haya en la mesa")
-    let cartas = prompt("repartire una a una cuantas quieras")
-    
-    if(cartas>52){
-        alert("hay solo 52 cartas en la baraja de poker")
-    }
-    
-    if (cartas <=52){
-        alert("ok entonces repartire " + cartas + " cartas en la mesa");
-        for( i=0 ; i != cartas ; i++){
-            alert(i+1)
-            
-        }
-        alert("de todas esas cartas elige una")
-    }
-    
-    
-    
-    alert ("perfecto ahora a esa carta elegida o pensada multiplicala por 2")
-    alert("despues sumale 1")
-    alert("multiplica ese resultado por 5")
-    alert("a continuacion al resultado que obtenga, sume segun el caso .....1) +6 si es de trebol....2) +7 si es de corazon....3) +8 si es de picas....4) +9 si es de diamantes")
-    
-    let valor = prompt (parseInt("perfecto escribe tu resultado"))
+    // cartas.forEach ( carta => {
+    //     const divCartas = document.createElement("div");
+    //     divCartas.classList.add("carta");
 
-    alert (valor)
+    //     divCartas.innerHTML = `
+    //     <img src= "${carta.imagen}" alt="${carta.titulo}">`;
 
-    alert("perfecto tu carta es...")
-    // let numsArr = Array.from(String(valor), Number)
-
-// console.log(numsArr)
+    //     contenedorJuegos.appendChild(divCartas);
+    // });
 }
 
+function limpiar(){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
 
+    contenedorJuegos.innerHTML=`
+    <h2>sacare la carta q estas pensando</h2>`    
 
+    const boton_siguiente2 = document.createElement("button");
+    boton_siguiente2.innerText = "siguiente";
+    boton_siguiente2.classList.add("boton2")
+    boton_siguiente2.addEventListener("click", () =>{
+        mostrarcartas2(cartas2);
+    });
+    
+    contenedorJuegos.appendChild(boton_siguiente2);
+}
 
+function mostrarcartas2 (cartas){
 
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
 
+    contenedorJuegos.innerHTML=`
+    <h2>he sacado tu carta</h2>`
 
+    for (const carta of cartas){
+        const divCartas = document.createElement("div");
+        divCartas.classList.add("carta");
 
-// alert("llegaremos a cero")
-// alert("desde que numero quieres volver");
-// let numero = prompt ("ingrese un numero entre 1 y 9");
+        divCartas.innerHTML = `
+        <img src= " ${carta.imagen}" alt="${carta.titulo}">`;
 
-// if (numero > 9){
-//     alert("ingresaste mal el numero sonso, es del 1 al 9")
-// }
+        contenedorJuegos.appendChild(divCartas);
+    }
 
-// if (numero <= 9){
-//     alert("cuenta regresiva")
-//     for(i = numero ; i > 0 ; i--){
-        
-//         alert (i);   
-//     } 
-//     alert("bien echo!!!")
-// }
+    principio_cartas();
+    
+}
+
+function principio_cartas (){
+
+    const boton_volver = document.createElement("button");
+    boton_volver.innerText = "volver al primer juego";
+    boton_volver.classList.add("botonvolver")
+    boton_volver.addEventListener("click", () =>{
+        mostrarcartas1(cartas1);
+    });
+    document.getElementById ("contenedor_juegos_cartas").appendChild(boton_volver);
+}
+
+const juego1 = document.getElementById(`primerJuego`)
+juego1.addEventListener(`click`, () =>{
+    mostrarcartas1(cartas1);
+});
+
+/*-------------------------------fin--------------------------*/
+
