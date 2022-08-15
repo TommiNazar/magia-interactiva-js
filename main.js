@@ -1,5 +1,45 @@
 
+/*----------------pagina principal------------*/
+
+    alert("viviras una experiencia magica")
+    let espectador1 = prompt("cual es tu nombre");
+    localStorage.setItem ("espectador" , espectador1 );
+    let espectador = localStorage.getItem ("espectador");
+    console.log(espectador);
+
+
+
+function index (){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+    contenedorJuegos.innerHTML=`
+    <h1>show de magia virtual</h1>
+    <h2>bienvenido ${espectador}</h2>
+        <h2>elige un juego</h2>
+
+        <button id="primerJuego">primer juego</button>
+        <button id="segundoJuego">segundo juego</button>
+        <button id="terceroJuego">tercer juego</button>
+        <button id="cuartoJuego">cuarto juego</button>`;
+
+    const juego1 = document.getElementById(`primerJuego`)
+    juego1.addEventListener(`click`, () =>{
+    mostrarcartas1(cartas1);
+    });
+
+}
+
+index ()
+
+
+/*-----------------------------fin pag principal-------------------------*/
+
 /*----------------------juego 1 cartas---------------*/
+const juego1 = document.getElementById(`primerJuego`)
+juego1.addEventListener(`click`, () =>{
+    mostrarcartas1(cartas1);
+});
+
 
 class carta {
     constructor (titulo,imagen) {
@@ -130,15 +170,13 @@ function principio_cartas (){
     boton_volver.innerText = "volver al primer juego";
     boton_volver.classList.add("botonvolver")
     boton_volver.addEventListener("click", () =>{
-        mostrarcartas1(cartas1);
+        index();
     });
     document.getElementById ("contenedor_juegos_cartas").appendChild(boton_volver);
 }
 
-const juego1 = document.getElementById(`primerJuego`)
-juego1.addEventListener(`click`, () =>{
-    mostrarcartas1(cartas1);
-});
 
-/*-------------------------------fin--------------------------*/
 
+/*-------------------------------fin juego1 -------------------------*/
+
+/*---------------------------juego 2--------------------*/
