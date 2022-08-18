@@ -1,12 +1,27 @@
 
 /*----------------pagina principal------------*/
 
-    alert("viviras una experiencia magica")
-    let espectador1 = prompt("cual es tu nombre");
+if (localStorage != null ){
+    const espectador1 = prompt("cual es tu nombre");
     localStorage.setItem ("espectador" , espectador1 );
-    let espectador = localStorage.getItem ("espectador");
+    const espectador = localStorage.getItem ("espectador");
     console.log(espectador);
+}
+const espectador = localStorage.getItem ("espectador");
 
+function presentacion(){
+    
+        Swal.fire({
+            title: 'viviras una experiencia magica ' + espectador,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+                },
+            })
+            
+}
 
 
 function index (){
@@ -27,8 +42,13 @@ function index (){
     mostrarcartas1(cartas1);
     });
 
-}
+    const juego2 = document.getElementById(`segundoJuego`)
+    juego1.addEventListener(`click`, () =>{
+    adivinacion_numero();
+    });
 
+}
+presentacion ()
 index ()
 
 
@@ -180,3 +200,7 @@ function principio_cartas (){
 /*-------------------------------fin juego1 -------------------------*/
 
 /*---------------------------juego 2--------------------*/
+
+function adivinacion_numero (){
+
+}
