@@ -433,10 +433,10 @@ function mostrartablas1 (){
         boton_si5.addEventListener("click", () =>{
             
             const resultado5 = 16;
-            
+            resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5);
             console.log(resultado5);
             return resultado5;
-            resultadosTotal ();
+            
             
         });
     
@@ -446,8 +446,9 @@ function mostrartablas1 (){
         boton_no5.addEventListener("click", () =>{
             const resultado5 = 0;
             console.log(resultado5);
+            resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5);
             return resultado5;
-            resultadosTotal ();
+            
             
         });
         
@@ -456,7 +457,7 @@ function mostrartablas1 (){
 
     }
 
-    function resultadosTotal (){
+    function resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5){
 
         const resultado = resultado1 + resultado2 + resultado3 + resultado4 + resultado5;
         console.log ( resultado);
@@ -464,7 +465,7 @@ function mostrartablas1 (){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>tu nuemro es ${resultado}</h2>`
+        <h2>tu nuemro es </h2>`
 
         principio();
     }
@@ -473,13 +474,7 @@ function mostrartablas1 (){
 /*-------------------------------------fin juego 2---------------*/
     /*---------------------juego 3-------------------------*/
 
-fetch(`juego3.json`)
-.then( res => res.json())
-.then(
-    data =>{
-        console.log(data);
-    }
-)
+
 
     function adivinacion_carta (){
 
@@ -506,6 +501,7 @@ fetch(`juego3.json`)
     contenedorJuegos.appendChild(boton_siguiente6);
     }
 
+    
     function adivinacion_carta2 () {
         const numeroEspectador = prompt("coloca tu numero");
 
@@ -515,5 +511,14 @@ fetch(`juego3.json`)
     contenedorJuegos.innerHTML=`
     <h2>tu carta es</h2>
     ` 
-
+    fetch(`juego3.json`)
+    .then( res => res.json())
+    .then(
+        data =>{
+        console.log(data);
+        console.log(data.find(p => p.numero == numeroEspectador));
+        
+    }
+)
+    
     }
