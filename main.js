@@ -516,8 +516,9 @@ function mostrartablas1 (){
     .then(
         data =>{
         console.log(data);
-        console.log(data.find(p => p.numero == numeroEspectador));
-        
+        console.log(data.find(p => p.numero == numeroEspectador) );
+        const carta12 = data.find(p => p.numero == numeroEspectador);
+        console.log("tu carta es " + carta12.carta );
     }
 )
     
