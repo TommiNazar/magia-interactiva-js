@@ -20,7 +20,7 @@ function presentacion(){
                 popup: 'animate__animated animate__fadeOutUp'
                 },
             })
-            
+                
 }
 
 
@@ -43,8 +43,13 @@ function index (){
     });
 
     const juego2 = document.getElementById(`segundoJuego`)
-    juego1.addEventListener(`click`, () =>{
-    adivinacion_numero();
+    juego2.addEventListener(`click`, () =>{
+    adivinacion_numero ();
+    });
+
+    const juego3 = document.getElementById(`terceroJuego`)
+    juego3.addEventListener(`click`, () =>{
+    adivinacion_carta ();
     });
 
 }
@@ -180,11 +185,11 @@ function mostrarcartas2 (cartas){
         contenedorJuegos.appendChild(divCartas);
     }
 
-    principio_cartas();
+    principio();
     
 }
 
-function principio_cartas (){
+function principio (){
 
     const boton_volver = document.createElement("button");
     boton_volver.innerText = "volver al primer juego";
@@ -201,6 +206,314 @@ function principio_cartas (){
 
 /*---------------------------juego 2--------------------*/
 
-function adivinacion_numero (){
+// var resultado1 = 0;
+// var resultado2 = 0;
+// var resultado3 = 0;
+// var resultado4 = 0;
+// var resultado5 = 0;
 
+
+class tabla {
+    constructor (titulo,imagen) {
+        this.titulo = titulo;
+        this.imagen = imagen;
+    }
+    
 }
+
+const tabla1 = new tabla ("tabla1","./img/tabla1.jpg")
+const tabla2 = new tabla ("tabla2","./img/tabla2.jpg")
+const tabla3 = new tabla ("tabla3","./img/tabla3.jpg")
+const tabla4 = new tabla ("tabla4","./img/tabla4.jpg")
+const tabla5 = new tabla ("tabla5","./img/tabla5.jpg")
+
+const tablas = []
+
+tablas.push(tabla1);
+tablas.push(tabla2);
+tablas.push(tabla3);
+tablas.push(tabla4);
+tablas.push(tabla5);
+
+console.log(tablas)
+
+function adivinacion_numero (){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <h2>piensa un numero menor a 30</h2>`    
+
+    const boton_siguiente3 = document.createElement("button");
+    boton_siguiente3.innerText = "siguiente";
+    boton_siguiente3.classList.add("boton2")
+    boton_siguiente3.addEventListener("click", () =>{
+        mostrartablas1 ();
+    });
+    contenedorJuegos.appendChild(boton_siguiente3);
+}
+
+function mostrartablas1 (){
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>esta tu numero entre estos</h2>` 
+        const divTablas = document.createElement("div");
+        divTablas.classList.add("tabla");
+
+        divTablas.innerHTML = `
+        <img src= " ${tabla1.imagen}" alt="${tabla1.titulo}">`;
+
+        contenedorJuegos.appendChild(divTablas);
+        
+        const boton_si1 = document.createElement("button");
+        boton_si1.innerText = "si";
+        boton_si1.classList.add("boton2")
+        boton_si1.addEventListener("click", () =>{
+            
+            const resultado1 = 8;
+            mostrartablas2 (tablas);
+            console.log(resultado1);
+            return resultado1;
+        });
+    
+        const boton_no1 = document.createElement("button");
+        boton_no1.innerText = "no";
+        boton_no1.classList.add("boton2")
+        boton_no1.addEventListener("click", () =>{
+            const resultado1 = 0;
+            mostrartablas2(tablas);
+            console.log(resultado1);
+            return resultado1;
+        });
+        
+        contenedorJuegos.appendChild(boton_si1);
+        contenedorJuegos.appendChild(boton_no1);
+    }
+
+    function mostrartablas2 (tablas){
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>esta tu numero entre estos</h2>` 
+        const divTablas = document.createElement("div");
+        divTablas.classList.add("tabla");
+
+        divTablas.innerHTML = `
+        <img src= " ${tabla2.imagen}" alt="${tabla2.titulo}">`;
+
+        contenedorJuegos.appendChild(divTablas);
+        
+        const boton_si2 = document.createElement("button");
+        boton_si2.innerText = "si";
+        boton_si2.classList.add("boton2")
+        boton_si2.addEventListener("click", () =>{
+            
+            const resultado2 = 2;
+            mostrartablas3 (tablas);
+            console.log(resultado2);
+            return resultado2;
+        });
+    
+        const boton_no2 = document.createElement("button");
+        boton_no2.innerText = "no";
+        boton_no2.classList.add("boton2")
+        boton_no2.addEventListener("click", () =>{
+            const resultado2 = 0;
+            mostrartablas3(tablas);
+            console.log(resultado2);
+            return resultado2;
+        });
+        
+        contenedorJuegos.appendChild(boton_si2);
+        contenedorJuegos.appendChild(boton_no2);
+    }
+
+    function mostrartablas3 (tablas){
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>esta tu numero entre estos</h2>` 
+        const divTablas = document.createElement("div");
+        divTablas.classList.add("tabla");
+
+        divTablas.innerHTML = `
+        <img src= " ${tabla3.imagen}" alt="${tabla3.titulo}">`;
+
+        contenedorJuegos.appendChild(divTablas);
+        
+        const boton_si3 = document.createElement("button");
+        boton_si3.innerText = "si";
+        boton_si3.classList.add("boton2")
+        boton_si3.addEventListener("click", () =>{
+            
+            const resultado3 = 4;
+            mostrartablas4 (tablas);
+            console.log(resultado3);
+            return resultado3;
+        });
+    
+        const boton_no3 = document.createElement("button");
+        boton_no3.innerText = "no";
+        boton_no3.classList.add("boton2")
+        boton_no3.addEventListener("click", () =>{
+            const resultado3 = 0;
+            mostrartablas4(tablas);
+            console.log(resultado3);
+            return resultado3;
+        });
+        
+        contenedorJuegos.appendChild(boton_si3);
+        contenedorJuegos.appendChild(boton_no3);
+    }
+
+    function mostrartablas4(tablas){
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>esta tu numero entre estos</h2>` 
+        const divTablas = document.createElement("div");
+        divTablas.classList.add("tabla");
+
+        divTablas.innerHTML = `
+        <img src= " ${tabla4.imagen}" alt="${tabla4.titulo}">`;
+
+        contenedorJuegos.appendChild(divTablas);
+        
+        const boton_si4 = document.createElement("button");
+        boton_si4.innerText = "si";
+        boton_si4.classList.add("boton2")
+        boton_si4.addEventListener("click", () =>{
+            
+            const resultado4 = 1;
+            console.log(resultado4);
+            
+            mostrartablas5 (tablas);
+            return resultado4;
+            
+            
+        });
+    
+        const boton_no4 = document.createElement("button");
+        boton_no4.innerText = "no";
+        boton_no4.classList.add("boton2")
+        boton_no4.addEventListener("click", () =>{
+            const resultado4 = 0;
+            mostrartablas5(tablas);
+            
+            console.log(resultado4);
+            return resultado4;
+        });
+        
+        contenedorJuegos.appendChild(boton_si4);
+        contenedorJuegos.appendChild(boton_no4);
+    }
+
+    function mostrartablas5(){
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>esta tu numero entre estos</h2>` 
+        const divTablas = document.createElement("div");
+        divTablas.classList.add("tabla");
+
+        divTablas.innerHTML = `
+        <img src= " ${tabla5.imagen}" alt="${tabla5.titulo}">`;
+
+        contenedorJuegos.appendChild(divTablas);
+        
+        const boton_si5 = document.createElement("button");
+        boton_si5.innerText = "si";
+        boton_si5.classList.add("boton2")
+        boton_si5.addEventListener("click", () =>{
+            
+            const resultado5 = 16;
+            
+            console.log(resultado5);
+            return resultado5;
+            resultadosTotal ();
+            
+        });
+    
+        const boton_no5 = document.createElement("button");
+        boton_no5.innerText = "no";
+        boton_no5.classList.add("boton2")
+        boton_no5.addEventListener("click", () =>{
+            const resultado5 = 0;
+            console.log(resultado5);
+            return resultado5;
+            resultadosTotal ();
+            
+        });
+        
+        contenedorJuegos.appendChild(boton_si5);
+        contenedorJuegos.appendChild(boton_no5);
+
+    }
+
+    function resultadosTotal (){
+
+        const resultado = resultado1 + resultado2 + resultado3 + resultado4 + resultado5;
+        console.log ( resultado);
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>tu nuemro es ${resultado}</h2>`
+
+        principio();
+    }
+
+
+/*-------------------------------------fin juego 2---------------*/
+    /*---------------------juego 3-------------------------*/
+
+fetch(`juego3.json`)
+.then( res => res.json())
+.then(
+    data =>{
+        console.log(data);
+    }
+)
+
+    function adivinacion_carta (){
+
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <h2>piensa una carta de la baraja de poker</h2>
+    <h2>perfecto ahora a esa carta elegida o pensada multiplicala por 2</h2>
+    <h2>despues sumale 1</h2>
+    <h2>multiplica ese resultado por 5</h2>
+    <h2>a continuacion al resultado que obtenga, sume segun el caso </h2>
+    <li>+6 si es de trebol</li>
+    <li>+7 si es de corazon</li>
+    <li>+8 si es de picas</li>
+    <li>+9 si es de diamantes</li>`    
+
+    const boton_siguiente6 = document.createElement("button");
+    boton_siguiente6.innerText = "siguiente";
+    boton_siguiente6.classList.add("boton2")
+    boton_siguiente6.addEventListener("click", () =>{
+        adivinacion_carta2 ();
+    });
+    contenedorJuegos.appendChild(boton_siguiente6);
+    }
+
+    function adivinacion_carta2 () {
+        const numeroEspectador = prompt("coloca tu numero");
+
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <h2>tu carta es</h2>
+    ` 
+
+    }
