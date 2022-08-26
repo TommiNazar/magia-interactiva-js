@@ -253,7 +253,7 @@ function adivinacion_numero (){
     contenedorJuegos.appendChild(boton_siguiente3);
 }
 
-function mostrartablas1 (){
+function mostrartablas1 (tablas){
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
         contenedorJuegos.innerHTM = "";
     
@@ -273,8 +273,9 @@ function mostrartablas1 (){
         boton_si1.addEventListener("click", () =>{
             
             const resultado1 = 8;
-            mostrartablas2 (tablas);
+            mostrartablas2 (tablas, resultado1);
             console.log(resultado1);
+            
             return resultado1;
         });
     
@@ -283,16 +284,18 @@ function mostrartablas1 (){
         boton_no1.classList.add("boton2")
         boton_no1.addEventListener("click", () =>{
             const resultado1 = 0;
-            mostrartablas2(tablas);
+            mostrartablas2(tablas, resultado1);
             console.log(resultado1);
+            
             return resultado1;
         });
         
         contenedorJuegos.appendChild(boton_si1);
         contenedorJuegos.appendChild(boton_no1);
+        
     }
 
-    function mostrartablas2 (tablas){
+    function mostrartablas2 (tablas, resultado1){
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
         contenedorJuegos.innerHTM = "";
     
@@ -312,8 +315,9 @@ function mostrartablas1 (){
         boton_si2.addEventListener("click", () =>{
             
             const resultado2 = 2;
-            mostrartablas3 (tablas);
-            console.log(resultado2);
+            mostrartablas3 (tablas,resultado1, resultado2);
+            console.log(resultado1, resultado2);
+            
             return resultado2;
         });
     
@@ -322,16 +326,18 @@ function mostrartablas1 (){
         boton_no2.classList.add("boton2")
         boton_no2.addEventListener("click", () =>{
             const resultado2 = 0;
-            mostrartablas3(tablas);
-            console.log(resultado2);
+            mostrartablas3(tablas,resultado1, resultado2);
+            console.log(resultado1, resultado2);
+            
             return resultado2;
         });
         
         contenedorJuegos.appendChild(boton_si2);
         contenedorJuegos.appendChild(boton_no2);
+        
     }
 
-    function mostrartablas3 (tablas){
+    function mostrartablas3 (tablas,resultado1, resultado2){
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
         contenedorJuegos.innerHTM = "";
     
@@ -351,8 +357,9 @@ function mostrartablas1 (){
         boton_si3.addEventListener("click", () =>{
             
             const resultado3 = 4;
-            mostrartablas4 (tablas);
-            console.log(resultado3);
+            mostrartablas4 (tablas,resultado1, resultado2,resultado3);
+            
+            console.log(resultado1, resultado2, resultado3);
             return resultado3;
         });
     
@@ -361,16 +368,18 @@ function mostrartablas1 (){
         boton_no3.classList.add("boton2")
         boton_no3.addEventListener("click", () =>{
             const resultado3 = 0;
-            mostrartablas4(tablas);
-            console.log(resultado3);
+            mostrartablas4(tablas,resultado1, resultado2,resultado3);
+            
+            console.log(resultado1, resultado2,resultado3);
             return resultado3;
         });
         
         contenedorJuegos.appendChild(boton_si3);
         contenedorJuegos.appendChild(boton_no3);
+        
     }
 
-    function mostrartablas4(tablas){
+    function mostrartablas4(tablas,resultado1, resultado2,resultado3){
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
         contenedorJuegos.innerHTM = "";
     
@@ -390,9 +399,9 @@ function mostrartablas1 (){
         boton_si4.addEventListener("click", () =>{
             
             const resultado4 = 1;
-            console.log(resultado4);
+            console.log(resultado1, resultado2,resultado3,resultado4);
             
-            mostrartablas5 (tablas);
+            mostrartablas5 (tablas,resultado1, resultado2,resultado3,resultado4);
             return resultado4;
             
             
@@ -403,17 +412,18 @@ function mostrartablas1 (){
         boton_no4.classList.add("boton2")
         boton_no4.addEventListener("click", () =>{
             const resultado4 = 0;
-            mostrartablas5(tablas);
+            mostrartablas5(tablas,resultado1, resultado2,resultado3,resultado4);
             
-            console.log(resultado4);
+            console.log(resultado1, resultado2,resultado3,resultado4);
             return resultado4;
         });
         
         contenedorJuegos.appendChild(boton_si4);
         contenedorJuegos.appendChild(boton_no4);
+        
     }
 
-    function mostrartablas5(){
+    function mostrartablas5(tablas,resultado1, resultado2,resultado3,resultado4){
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
         contenedorJuegos.innerHTM = "";
     
@@ -433,8 +443,8 @@ function mostrartablas1 (){
         boton_si5.addEventListener("click", () =>{
             
             const resultado5 = 16;
-            resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5);
-            console.log(resultado5);
+            resultadosTotal (resultado1, resultado2,resultado3,resultado4,resultado5);
+            console.log(resultado1, resultado2,resultado3,resultado4,resultado5);
             return resultado5;
             
             
@@ -445,8 +455,8 @@ function mostrartablas1 (){
         boton_no5.classList.add("boton2")
         boton_no5.addEventListener("click", () =>{
             const resultado5 = 0;
-            console.log(resultado5);
-            resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5);
+            console.log(resultado1, resultado2,resultado3,resultado4,resultado5);
+            resultadosTotal (resultado1, resultado2,resultado3,resultado4,resultado5);
             return resultado5;
             
             
@@ -454,10 +464,11 @@ function mostrartablas1 (){
         
         contenedorJuegos.appendChild(boton_si5);
         contenedorJuegos.appendChild(boton_no5);
+        
 
     }
 
-    function resultadosTotal (resultado1, resultado2, resultado3, resultado4, resultado5){
+    function resultadosTotal (resultado1, resultado2,resultado3,resultado4,resultado5){
 
         const resultado = resultado1 + resultado2 + resultado3 + resultado4 + resultado5;
         console.log ( resultado);
@@ -465,7 +476,7 @@ function mostrartablas1 (){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>tu nuemro es </h2>`
+        <h2>tu numero pensado es ${resultado}</h2>`
 
         principio();
     }
