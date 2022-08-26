@@ -505,12 +505,7 @@ function mostrartablas1 (){
     function adivinacion_carta2 () {
         const numeroEspectador = prompt("coloca tu numero");
 
-        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
-    contenedorJuegos.innerHTM = "";
-
-    contenedorJuegos.innerHTML=`
-    <h2>tu carta es</h2>
-    ` 
+    
     fetch(`juego3.json`)
     .then( res => res.json())
     .then(
@@ -519,6 +514,13 @@ function mostrartablas1 (){
         console.log(data.find(p => p.numero == numeroEspectador) );
         const carta12 = data.find(p => p.numero == numeroEspectador);
         console.log("tu carta es " + carta12.carta );
+        const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.innerHTM = "";
+    
+        contenedorJuegos.innerHTML=`
+        <h2>tu carta es el ${carta12.carta}</h2>
+        ` 
+        principio();
     }
 )
     
