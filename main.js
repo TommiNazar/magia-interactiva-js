@@ -28,14 +28,19 @@ function index (){
     const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
     contenedorJuegos.innerHTM = "";
     contenedorJuegos.innerHTML=`
-    <h1>show de magia virtual</h1>
-    <h2>bienvenido ${espectador}</h2>
-        <h2>elige un juego</h2>
-
-        <button id="primerJuego">primer juego</button>
-        <button id="segundoJuego">segundo juego</button>
-        <button id="terceroJuego">tercer juego</button>
-        <button id="cuartoJuego">cuarto juego</button>`;
+    <div class="index">
+    <h1 class="h1index">show de magia virtual</h1>
+    <h2 class="h2index">bienvenido ${espectador}</h2>
+        <h2 class="h2index">elige un juego</h2>
+        <div class="botonesIndex">
+        <button id="primerJuego" class ="botonIndex">Primer Juego</button>
+        <button id="segundoJuego" class ="botonIndex">Segundo Juego</button>
+        <button id="terceroJuego" class ="botonIndex">Tercer Juego</button>
+        <button id="cuartoJuego" class ="botonIndex">Cuarto Juego</button>
+        </div>
+        
+    </div>
+    `;
 
     const juego1 = document.getElementById(`primerJuego`)
     juego1.addEventListener(`click`, () =>{
@@ -60,10 +65,7 @@ index ()
 /*-----------------------------fin pag principal-------------------------*/
 
 /*----------------------juego 1 cartas---------------*/
-const juego1 = document.getElementById(`primerJuego`)
-juego1.addEventListener(`click`, () =>{
-    mostrarcartas1(cartas1);
-});
+
 
 
 class carta {
@@ -205,12 +207,6 @@ function principio (){
 /*-------------------------------fin juego1 -------------------------*/
 
 /*---------------------------juego 2--------------------*/
-
-// var resultado1 = 0;
-// var resultado2 = 0;
-// var resultado3 = 0;
-// var resultado4 = 0;
-// var resultado5 = 0;
 
 
 class tabla {
@@ -533,6 +529,7 @@ function mostrartablas1 (tablas){
         ` 
         principio();
     }
-)
-    
-    }
+    )
+}
+
+/*----------------------fin tercer juego-------------------------------*/

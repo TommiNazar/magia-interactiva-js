@@ -3,6 +3,76 @@ margin: 0;
 padding: 0;
 }
 
+body{
+    background-color: black;
+}
+
+.index{
+    height: 100vh;
+    background-image: url(./img/bg-index.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.h1index{
+    text-align: center;
+    font-size: 4rem;
+    color: whitesmoke;
+}
+
+.botonesIndex{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: space-between;
+    
+}
+
+.botonIndex{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    border-radius: 2em;
+}
+/* #primerJuego{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    border-radius: 2em;
+}
+
+#segundoJuego{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    border-radius: 2em;
+}
+
+#terceroJuego{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    border-radius: 2em;
+}
+
+#cuartoJuego{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    margin: 2rem;
+    border-radius: 2em;
+} */
+
+.h2index{
+    text-align: center;
+    font-size: 3rem;
+    color: whitesmoke;
+}
+
 
 .texto1{
     display: block;
