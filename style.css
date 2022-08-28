@@ -6,6 +6,21 @@ padding: 0;
 body{
     background-color: black;
 }
+h1{
+    text-align: center;
+    font-size: 4rem;
+    color: whitesmoke;
+}
+h2{
+    text-align: center;
+    font-size: 3rem;
+    color: whitesmoke;
+}
+li{
+    text-align: center;
+    font-size: 3rem;
+    color: whitesmoke;
+}
 
 .index{
     height: 100vh;
@@ -58,14 +73,10 @@ body{
     margin: 2rem;
     border-radius: 2em;
 }
-
+*/
 #cuartoJuego{
-    font-size: 3rem;
-    height: auto;
-    width: auto;
-    margin: 2rem;
-    border-radius: 2em;
-} */
+    margin-bottom: 0;
+} 
 
 .h2index{
     text-align: center;

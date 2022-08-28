@@ -2,7 +2,7 @@
 /*----------------pagina principal------------*/
 
 if (localStorage != null ){
-    const espectador1 = prompt("cual es tu nombre");
+    const espectador1 = prompt("Cual es tu Nombre");
     localStorage.setItem ("espectador" , espectador1 );
     const espectador = localStorage.getItem ("espectador");
     console.log(espectador);
@@ -12,7 +12,7 @@ const espectador = localStorage.getItem ("espectador");
 function presentacion(){
     
         Swal.fire({
-            title: 'viviras una experiencia magica ' + espectador,
+            title: 'Preparate Para Vivir una Experiencia Magica ' + espectador,
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
                 },
@@ -29,9 +29,9 @@ function index (){
     contenedorJuegos.innerHTM = "";
     contenedorJuegos.innerHTML=`
     <div class="index">
-    <h1 class="h1index">show de magia virtual</h1>
-    <h2 class="h2index">bienvenido ${espectador}</h2>
-        <h2 class="h2index">elige un juego</h2>
+    <h1 class="h1index">Show de Magia Virtual</h1>
+    <h2 class="h2index">Bienvenido ${espectador}</h2>
+        <h2 class="h2index">Elige un Juego</h2>
         <div class="botonesIndex">
         <button id="primerJuego" class ="botonIndex">Primer Juego</button>
         <button id="segundoJuego" class ="botonIndex">Segundo Juego</button>
