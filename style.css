@@ -6,21 +6,28 @@ padding: 0;
 body{
     background-color: black;
 }
+
+
 h1{
     text-align: center;
     font-size: 4rem;
-    color: whitesmoke;
+    color: rgb(255, 0, 0);
 }
 h2{
     text-align: center;
     font-size: 3rem;
-    color: whitesmoke;
+    color: rgb(255, 0, 0);
+}
+h3{
+    color: rgb(255, 0, 0);
 }
 li{
     text-align: center;
     font-size: 3rem;
-    color: whitesmoke;
+    color: rgb(255, 0, 0);
 }
+
+/*-------------index------------*/
 
 .index{
     height: 100vh;
@@ -32,7 +39,7 @@ li{
 .h1index{
     text-align: center;
     font-size: 4rem;
-    color: whitesmoke;
+    color: rgb(255, 0, 0);
 }
 
 .botonesIndex{
@@ -81,9 +88,10 @@ li{
 .h2index{
     text-align: center;
     font-size: 3rem;
-    color: whitesmoke;
+    color: rgb(255, 0, 0);
 }
 
+/*-------------------primer juego----------------------*/
 
 .texto1{
     display: block;
@@ -102,9 +110,36 @@ li{
     width: 25%;
     
 }
+#contenedor_boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton_contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .boton1{
     display: block;
-    height: 3em;
+    height: 2em;
     width: 5em;
-    font-size: 3em;
+    font-size: 2em;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.boton2{
+    
+    font-size: 2em;
+    height: 2em;
+    width: 5em;
+    margin: 1em;
+}
+.botonvolver{
+    font-size: 2em;
+    height: 2em;
+    width: 7em;
+    margin: 1em;
 }

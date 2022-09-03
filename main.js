@@ -1,15 +1,19 @@
 
 /*----------------pagina principal------------*/
 
-if (localStorage != null ){
-    const espectador1 = prompt("Cual es tu Nombre");
-    localStorage.setItem ("espectador" , espectador1 );
-    const espectador = localStorage.getItem ("espectador");
-    console.log(espectador);
-}
-const espectador = localStorage.getItem ("espectador");
 
-function presentacion(){
+    if(localStorage != null){
+        const espectador1 = prompt("Cual es tu Nombre");
+        localStorage.setItem ("espectador" , espectador1 );
+        const espectador = localStorage.getItem ("espectador");
+    }
+    const espectador = localStorage.getItem ("espectador");
+    
+    presentacion ()
+    index ()
+
+
+    function presentacion(){
     
         Swal.fire({
             title: 'Preparate Para Vivir una Experiencia Magica ' + espectador,
@@ -22,6 +26,8 @@ function presentacion(){
             })
                 
 }
+
+
 
 
 function index (){
@@ -58,8 +64,7 @@ function index (){
     });
 
 }
-presentacion ()
-index ()
+
 
 
 /*-----------------------------fin pag principal-------------------------*/
@@ -81,9 +86,10 @@ const carta2 = new carta ("9C","./img/9c.png")
 const carta3 = new carta ("9T","./img/9t.png")
 const carta4 = new carta ("10D","./img/10d.png")
 const carta5 = new carta ("10P","./img/10p.png")
+const carta10 = new carta ("8DI","./img/8diam.png")
 console.log(carta3)
 
-const cartas1 = [carta1,carta4,carta3,carta2,carta5]
+const cartas1 = [carta1,carta4,carta3,carta2,carta5, carta10]
 
 // cartas1.push(carta1);
 // cartas1.push(carta2);
@@ -99,6 +105,7 @@ const carta6 = new carta ("8T","./img/8t.png")
 const carta7 = new carta ("9D","./img/9d.png")
 const carta8 = new carta ("10C","./img/10c.png")
 const carta9 = new carta ("10T","./img/10t.png")
+const carta11 = new carta ("8C","./img/8c.png")
 
 const cartas2 = []
 
@@ -106,6 +113,7 @@ cartas2.push(carta8);
 cartas2.push(carta7);
 cartas2.push(carta6);
 cartas2.push(carta9);
+cartas2.push(carta11);
 
 console.log(cartas2)
 
@@ -114,10 +122,10 @@ function mostrarcartas1 (cartas){
     const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
     contenedorJuegos.innerHTM = "";
     contenedorJuegos.innerHTML=`
-    <h2>listo para jugar</h2>`
+    <h2>Listo Para Jugar...</h2>`
 
     const texto1 = document.createElement("div");
-    texto1.innerHTML = "<h2>recuerda una carta</h2>";
+    texto1.innerHTML = "<h2>Recuerda una Carta</h2>";
     texto1.classList.add("texto1");
     contenedorJuegos.appendChild(texto1);
 
@@ -130,14 +138,16 @@ function mostrarcartas1 (cartas){
 
         contenedorJuegos.appendChild(divCartas);
     }
-
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
     const boton_siguiente = document.createElement("button");
     boton_siguiente.innerText = "siguiente";
     boton_siguiente.classList.add("boton1")
     
 
     boton_siguiente.addEventListener("click", limpiar);
-    contenedorJuegos.appendChild(boton_siguiente);
+    contenedorJuegos.appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_siguiente);
 
     
 
@@ -157,8 +167,9 @@ function limpiar(){
     contenedorJuegos.innerHTM = "";
 
     contenedorJuegos.innerHTML=`
-    <h2>sacare la carta q estas pensando</h2>`    
-
+    <h2>Sacare la Carta que Estas Pensando</h2>
+    <div id="contenedor_boton"></div>`    
+    const contenedor_boton = document.getElementById("contenedor_boton");
     const boton_siguiente2 = document.createElement("button");
     boton_siguiente2.innerText = "siguiente";
     boton_siguiente2.classList.add("boton2")
@@ -166,7 +177,7 @@ function limpiar(){
         mostrarcartas2(cartas2);
     });
     
-    contenedorJuegos.appendChild(boton_siguiente2);
+    contenedor_boton.appendChild(boton_siguiente2);
 }
 
 function mostrarcartas2 (cartas){
@@ -175,7 +186,7 @@ function mostrarcartas2 (cartas){
     contenedorJuegos.innerHTM = "";
 
     contenedorJuegos.innerHTML=`
-    <h2>he sacado tu carta</h2>`
+    <h2>Ahora Tu Carta Ya No esta</h2>`
 
     for (const carta of cartas){
         const divCartas = document.createElement("div");
@@ -192,14 +203,18 @@ function mostrarcartas2 (cartas){
 }
 
 function principio (){
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
 
     const boton_volver = document.createElement("button");
-    boton_volver.innerText = "volver al primer juego";
+    boton_volver.innerText = "volver al menu";
     boton_volver.classList.add("botonvolver")
     boton_volver.addEventListener("click", () =>{
         index();
     });
-    document.getElementById ("contenedor_juegos_cartas").appendChild(boton_volver);
+    
+    document.getElementById ("contenedor_juegos_cartas").appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_volver)
 }
 
 
@@ -497,21 +512,29 @@ function mostrartablas1 (tablas){
     <li>+6 si es de trebol</li>
     <li>+7 si es de corazon</li>
     <li>+8 si es de picas</li>
-    <li>+9 si es de diamantes</li>`    
+    <li>+9 si es de diamantes</li>
+    <br>
+    <h3>coloca tu numero</h3>
+    <input type="text" id="inputJuego3">
+    <br>`    
+    
 
     const boton_siguiente6 = document.createElement("button");
     boton_siguiente6.innerText = "siguiente";
     boton_siguiente6.classList.add("boton2")
     boton_siguiente6.addEventListener("click", () =>{
+        
         adivinacion_carta2 ();
+        
     });
     contenedorJuegos.appendChild(boton_siguiente6);
     }
 
     
     function adivinacion_carta2 () {
-        const numeroEspectador = prompt("coloca tu numero");
 
+        const numeroEspectador = document.getElementById ("inputJuego3").value;
+        // const numeroEspectador = prompt("coloca tu numero");
     
     fetch(`juego3.json`)
     .then( res => res.json())
