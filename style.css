@@ -36,11 +36,7 @@ li{
     background-repeat: no-repeat;
 }
 
-.h1index{
-    text-align: center;
-    font-size: 4rem;
-    color: rgb(255, 0, 0);
-}
+
 
 .botonesIndex{
     display: flex;
@@ -142,4 +138,54 @@ li{
     height: 2em;
     width: 7em;
     margin: 1em;
+}
+
+.juego1{
+    height: 100vh;
+    background-image: url(./img/bg-juego1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*----------------------juego 2---------------------*/
+.bg-juego2{
+    height: 100vh;
+    background-image: url(./img/bg-juego3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.juego2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.tablas{
+    height: 45%;
+    width: auto;
+}
+
+/*-----------------juego 3 ------------------------*/
+
+.contenedorInput{
+    display: flex;
+    justify-content: center;
+}
+#inputJuego3{
+    height: 2em;
+    width: auto;
+}
+.bg-juego3{
+    height: 100vh;
+    background-color: none;
+    background-image: url(./img/bg-footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-juego3-2{
+    background-image: none;
+    background-color: black;
+    height: auto;
 }

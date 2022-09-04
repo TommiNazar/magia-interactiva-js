@@ -63,6 +63,11 @@ function index (){
     adivinacion_carta ();
     });
 
+    const juego4 = document.getElementById(`cuartoJuego`)
+    juego4.addEventListener(`click`, () =>{
+    adivinacion_pensamiento ();
+    });
+
 }
 
 
@@ -167,8 +172,10 @@ function limpiar(){
     contenedorJuegos.innerHTM = "";
 
     contenedorJuegos.innerHTML=`
+    <div class="juego1">
     <h2>Sacare la Carta que Estas Pensando</h2>
-    <div id="contenedor_boton"></div>`    
+    <div id="contenedor_boton"></div>
+    </div>`    
     const contenedor_boton = document.getElementById("contenedor_boton");
     const boton_siguiente2 = document.createElement("button");
     boton_siguiente2.innerText = "siguiente";
@@ -186,7 +193,8 @@ function mostrarcartas2 (cartas){
     contenedorJuegos.innerHTM = "";
 
     contenedorJuegos.innerHTML=`
-    <h2>Ahora Tu Carta Ya No esta</h2>`
+    
+    <h2> Ahora Tu Carta Ya No esta</h2>`
 
     for (const carta of cartas){
         const divCartas = document.createElement("div");
@@ -250,18 +258,31 @@ console.log(tablas)
 
 function adivinacion_numero (){
     const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.classList.add("bg-juego2")
     contenedorJuegos.innerHTM = "";
+    
 
     contenedorJuegos.innerHTML=`
-    <h2>piensa un numero menor a 30</h2>`    
+    <h2>Piensa un Numero Menor a 30</h2>
+    `  
+    
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
 
     const boton_siguiente3 = document.createElement("button");
     boton_siguiente3.innerText = "siguiente";
-    boton_siguiente3.classList.add("boton2")
+    boton_siguiente3.classList.add("boton2");
+
+
     boton_siguiente3.addEventListener("click", () =>{
         mostrartablas1 ();
     });
-    contenedorJuegos.appendChild(boton_siguiente3);
+
+    
+    contenedorJuegos.appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_siguiente3);
+    
+    
 }
 
 function mostrartablas1 (tablas){
@@ -269,14 +290,23 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>esta tu numero entre estos</h2>` 
+        <h2>Esta Tu Numero Entre Estos</h2>` 
+
+        const contendorjuego2 = document.createElement("div");
+        contendorjuego2.classList.add("juego2");
+
         const divTablas = document.createElement("div");
         divTablas.classList.add("tabla");
 
         divTablas.innerHTML = `
         <img src= " ${tabla1.imagen}" alt="${tabla1.titulo}">`;
 
-        contenedorJuegos.appendChild(divTablas);
+        contenedorJuegos.appendChild(contendorjuego2);
+        contendorjuego2.appendChild(divTablas);
+
+        const botonesjuego2 = document.createElement("div");
+        botonesjuego2.classList.add("botonesjuego2");
+        contendorjuego2.appendChild(botonesjuego2);
         
         const boton_si1 = document.createElement("button");
         boton_si1.innerText = "si";
@@ -301,8 +331,8 @@ function mostrartablas1 (tablas){
             return resultado1;
         });
         
-        contenedorJuegos.appendChild(boton_si1);
-        contenedorJuegos.appendChild(boton_no1);
+        botonesjuego2.appendChild(boton_si1);
+        botonesjuego2.appendChild(boton_no1);
         
     }
 
@@ -311,14 +341,22 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>esta tu numero entre estos</h2>` 
+        <h2>Esta Tu Numero Entre Estos</h2>` 
+        const contendorjuego2 = document.createElement("div");
+        contendorjuego2.classList.add("juego2");
+
         const divTablas = document.createElement("div");
         divTablas.classList.add("tabla");
 
         divTablas.innerHTML = `
         <img src= " ${tabla2.imagen}" alt="${tabla2.titulo}">`;
 
-        contenedorJuegos.appendChild(divTablas);
+        contenedorJuegos.appendChild(contendorjuego2);
+        contendorjuego2.appendChild(divTablas);
+
+        const botonesjuego2 = document.createElement("div");
+        botonesjuego2.classList.add("botonesjuego2");
+        contendorjuego2.appendChild(botonesjuego2);
         
         const boton_si2 = document.createElement("button");
         boton_si2.innerText = "si";
@@ -343,8 +381,8 @@ function mostrartablas1 (tablas){
             return resultado2;
         });
         
-        contenedorJuegos.appendChild(boton_si2);
-        contenedorJuegos.appendChild(boton_no2);
+        botonesjuego2.appendChild(boton_si2);
+        botonesjuego2.appendChild(boton_no2);
         
     }
 
@@ -353,14 +391,23 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>esta tu numero entre estos</h2>` 
+        <h2>Esta Tu Numero Entre Estos</h2>`
+
+        const contendorjuego2 = document.createElement("div");
+        contendorjuego2.classList.add("juego2");
+        
         const divTablas = document.createElement("div");
         divTablas.classList.add("tabla");
 
         divTablas.innerHTML = `
         <img src= " ${tabla3.imagen}" alt="${tabla3.titulo}">`;
 
-        contenedorJuegos.appendChild(divTablas);
+        contenedorJuegos.appendChild(contendorjuego2);
+        contendorjuego2.appendChild(divTablas);
+
+        const botonesjuego2 = document.createElement("div");
+        botonesjuego2.classList.add("botonesjuego2");
+        contendorjuego2.appendChild(botonesjuego2);
         
         const boton_si3 = document.createElement("button");
         boton_si3.innerText = "si";
@@ -385,8 +432,8 @@ function mostrartablas1 (tablas){
             return resultado3;
         });
         
-        contenedorJuegos.appendChild(boton_si3);
-        contenedorJuegos.appendChild(boton_no3);
+        botonesjuego2.appendChild(boton_si3);
+        botonesjuego2.appendChild(boton_no3);
         
     }
 
@@ -395,14 +442,23 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>esta tu numero entre estos</h2>` 
+        <h2>Esta Tu Numero Entre Estos</h2>` 
+
+        const contendorjuego2 = document.createElement("div");
+        contendorjuego2.classList.add("juego2");
+
         const divTablas = document.createElement("div");
         divTablas.classList.add("tabla");
 
         divTablas.innerHTML = `
         <img src= " ${tabla4.imagen}" alt="${tabla4.titulo}">`;
 
-        contenedorJuegos.appendChild(divTablas);
+        contenedorJuegos.appendChild(contendorjuego2);
+        contendorjuego2.appendChild(divTablas);
+
+        const botonesjuego2 = document.createElement("div");
+        botonesjuego2.classList.add("botonesjuego2");
+        contendorjuego2.appendChild(botonesjuego2);
         
         const boton_si4 = document.createElement("button");
         boton_si4.innerText = "si";
@@ -429,8 +485,8 @@ function mostrartablas1 (tablas){
             return resultado4;
         });
         
-        contenedorJuegos.appendChild(boton_si4);
-        contenedorJuegos.appendChild(boton_no4);
+        botonesjuego2.appendChild(boton_si4);
+        botonesjuego2.appendChild(boton_no4);
         
     }
 
@@ -439,14 +495,23 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>esta tu numero entre estos</h2>` 
+        <h2>Esta Tu Numero Entre Estos</h2>` 
+
+        const contendorjuego2 = document.createElement("div");
+        contendorjuego2.classList.add("juego2");
+
         const divTablas = document.createElement("div");
         divTablas.classList.add("tabla");
 
         divTablas.innerHTML = `
         <img src= " ${tabla5.imagen}" alt="${tabla5.titulo}">`;
 
-        contenedorJuegos.appendChild(divTablas);
+        contenedorJuegos.appendChild(contendorjuego2);
+        contendorjuego2.appendChild(divTablas);
+
+        const botonesjuego2 = document.createElement("div");
+        botonesjuego2.classList.add("botonesjuego2");
+        contendorjuego2.appendChild(botonesjuego2);
         
         const boton_si5 = document.createElement("button");
         boton_si5.innerText = "si";
@@ -473,8 +538,8 @@ function mostrartablas1 (tablas){
             
         });
         
-        contenedorJuegos.appendChild(boton_si5);
-        contenedorJuegos.appendChild(boton_no5);
+        botonesjuego2.appendChild(boton_si5);
+        botonesjuego2.appendChild(boton_no5);
         
 
     }
@@ -487,7 +552,7 @@ function mostrartablas1 (tablas){
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>tu numero pensado es ${resultado}</h2>`
+        <h2>Tu Numero Pensado Es ${resultado}</h2>`
 
         principio();
     }
@@ -504,20 +569,30 @@ function mostrartablas1 (tablas){
     contenedorJuegos.innerHTM = "";
 
     contenedorJuegos.innerHTML=`
-    <h2>piensa una carta de la baraja de poker</h2>
-    <h2>perfecto ahora a esa carta elegida o pensada multiplicala por 2</h2>
-    <h2>despues sumale 1</h2>
-    <h2>multiplica ese resultado por 5</h2>
-    <h2>a continuacion al resultado que obtenga, sume segun el caso </h2>
-    <li>+6 si es de trebol</li>
-    <li>+7 si es de corazon</li>
-    <li>+8 si es de picas</li>
-    <li>+9 si es de diamantes</li>
+    <div class="bg-juego3-2">
+    <h2>Piensa una Carta de la Baraja de Poker...</h2>
     <br>
-    <h3>coloca tu numero</h3>
+    <h2>Perfecto Ahora a esa Carta Elegida o Pensada Multiplicala por "2"...</h2>
+    <br>
+    <h2>Despues Sumale "1"...</h2>
+    <br>
+    <h2>Multiplica ese Resultado por "5"...</h2>
+    <br>
+    <h2>A Continuacion al Resultado que Obtenga, Sume Segun el Caso </h2>
+    <li>+6 Si es de Trebol</li>
+    <li>+7 Si es de Corazon</li>
+    <li>+8 Si es de Picas</li>
+    <li>+9 Si es de Diamantes</li>
+    <br>
+    <h2>"Coloca el Resultado"</h2>
+    <div class="contenedorInput">
     <input type="text" id="inputJuego3">
+    </div>
+    </div>
     <br>`    
     
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
 
     const boton_siguiente6 = document.createElement("button");
     boton_siguiente6.innerText = "siguiente";
@@ -527,7 +602,8 @@ function mostrartablas1 (tablas){
         adivinacion_carta2 ();
         
     });
-    contenedorJuegos.appendChild(boton_siguiente6);
+    contenedorJuegos.appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_siguiente6);
     }
 
     
@@ -545,10 +621,11 @@ function mostrartablas1 (tablas){
         const carta12 = data.find(p => p.numero == numeroEspectador);
         console.log("tu carta es " + carta12.carta );
         const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+        contenedorJuegos.classList.add("bg-juego3")
         contenedorJuegos.innerHTM = "";
     
         contenedorJuegos.innerHTML=`
-        <h2>tu carta es el ${carta12.carta}</h2>
+        <h2>Tu Carta Es "${carta12.carta}"</h2>
         ` 
         principio();
     }
@@ -556,3 +633,87 @@ function mostrartablas1 (tablas){
 }
 
 /*----------------------fin tercer juego-------------------------------*/
+
+/*----------------------juego 4-----------------------------------*/
+
+function adivinacion_pensamiento (){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <div class="bg-juego3-2">
+    <h2>Piensa un Numero del 1 y 9...</h2>
+    <br>
+    <h2>Perfecto! Ahora con ese Numero vas a Resolver Algunas Operaciones Matematicas Simples, es Importante que se Hagan Bien!!...</h2>
+    <br>
+    <h2>Primero Multiplica Tu numero por "2"...</h2>
+    <br>
+    <h2>al Resultado sumale "8"...</h2>
+    <br>
+    <h2>Ahora al Resultado Dividelo por "2" </h2>
+    <br>
+    <h2>Por Ultimo al Resultado Restale el Numero que Elegiste al Principio</h2>
+    </div>`    
+    
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
+
+    const boton_siguiente6 = document.createElement("button");
+    boton_siguiente6.innerText = "siguiente";
+    boton_siguiente6.classList.add("boton2")
+    boton_siguiente6.addEventListener("click", () =>{
+        
+        adivinacion_pensamiento2 ();
+        
+    });
+    contenedorJuegos.appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_siguiente6);
+}
+
+function adivinacion_pensamiento2 (){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <div class="bg-juego3-2">
+    <br>
+    <h2>Muy Bien, Ahora a Ese Numero Vas a Llevarlo al Abecedario,<br> Si Fuese el 1 es la "A", el 2 la "B", el 3 "C" y asi Sucesivamente...</h2>
+    <br>
+    <h2>Piensa un Pais que Comienza con la Letra Correspondiente al Resultado que te dio </h2>
+    <br>
+    <h2>Genial! Ahora vuelve al Abecedario y con la Letra Siguiente al Resultado Piensa un animal</h2>
+    <br>
+    <h2>Si lo Has Echo Bien Preparate Para Sorprenderte!!! </h2>
+    <br>
+    </div>
+    <br>`    
+    
+    const boton_contenedor = document.createElement("div")
+    boton_contenedor.classList.add("boton_contenedor")
+
+    const boton_siguiente6 = document.createElement("button");
+    boton_siguiente6.innerText = "siguiente";
+    boton_siguiente6.classList.add("boton2")
+    boton_siguiente6.addEventListener("click", () =>{
+        
+        adivinacion_pensamiento3 ();
+        
+    });
+    contenedorJuegos.appendChild(boton_contenedor);
+    boton_contenedor.appendChild(boton_siguiente6);
+}
+
+function adivinacion_pensamiento3(){
+    const contenedorJuegos = document.getElementById ("contenedor_juegos_cartas");
+    contenedorJuegos.classList.add("bg-juego3")
+    contenedorJuegos.innerHTM = "";
+
+    contenedorJuegos.innerHTML=`
+    <div class="bg-juego3-2">
+    <br>
+    <br>
+    <h2>Dejame Decirte que No Hay ELEFANTES en DINAMARCA</h2>
+    <br>
+    <br>`  
+    principio();
+}
