@@ -3,37 +3,40 @@ margin: 0;
 padding: 0;
 }
 
-body{
-    background-color: black;
+#body{
+    background-color: #27374D;
 }
 
 
 h1{
     text-align: center;
     font-size: 4rem;
-    color: rgb(255, 0, 0);
+    color: white;
+    margin-top: 10rem;
+    
+    
 }
 h2{
     text-align: center;
     font-size: 3rem;
-    color: rgb(255, 0, 0);
+    color: white;
+   
 }
 h3{
-    color: rgb(255, 0, 0);
+    color: white;
 }
 li{
     text-align: center;
-    font-size: 3rem;
-    color: rgb(255, 0, 0);
+    font-size: 2rem;
+    color: white;
 }
 
 /*-------------index------------*/
 
 .index{
     height: 100vh;
-    background-image: url(./img/bg-index.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #27374D;
+    
 }
 
 
@@ -41,18 +44,14 @@ li{
 .botonesIndex{
     display: flex;
     flex-direction: column;
-    align-items:flex-end;
+    justify-content: center;
+    align-items:center;
     justify-content: space-between;
+    margin: 5rem;
     
 }
 
-.botonIndex{
-    font-size: 3rem;
-    height: auto;
-    width: auto;
-    margin: 2rem;
-    border-radius: 2em;
-}
+
 /* #primerJuego{
     font-size: 3rem;
     height: auto;
@@ -81,13 +80,19 @@ li{
     margin-bottom: 0;
 } 
 
+
+
 .h2index{
+    margin-top: 2rem;
     text-align: center;
     font-size: 3rem;
-    color: rgb(255, 0, 0);
+    color: white;
+    text-decoration:underline;
 }
 
 /*-------------------primer juego----------------------*/
+
+
 
 .texto1{
     display: block;
@@ -95,15 +100,24 @@ li{
     margin-left: 20%;
     margin-right: 20%;
 }
+
+.cartasConteiner{
+    display: flex;
+
+}
+
 .carta{
-    display: inline;    
+        
     margin: 10px;
     height: auto;
     width: auto;
+    display: inline;
+       
+
 }
 .carta img{
     height: auto;
-    width: 25%;
+    width: 100%;
     
 }
 #contenedor_boton{
@@ -142,29 +156,43 @@ li{
 
 .juego1{
     height: 100vh;
-    background-image: url(./img/bg-juego1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
 }
 
 /*----------------------juego 2---------------------*/
 .bg-juego2{
     height: 100vh;
-    background-image: url(./img/bg-juego3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.juego2{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.textoJuego2{
+    font-size: 3rem;
+}
+
+.juego2{
+   
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
 
 }
-.tablas{
-    height: 45%;
+.tabla{
+    height: auto;
     width: auto;
+    margin: 3rem;
+
+    
+}
+.tabla img{
+    height: auto;
+    width: 80%;
 }
 
 /*-----------------juego 3 ------------------------*/
@@ -179,13 +207,9 @@ li{
 }
 .bg-juego3{
     height: 100vh;
-    background-color: none;
-    background-image: url(./img/bg-footer.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    
 }
 .bg-juego3-2{
-    background-image: none;
-    background-color: black;
+    
     height: auto;
 }
